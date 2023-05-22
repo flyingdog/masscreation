@@ -1,0 +1,86 @@
+<core:FragmentDefinition
+	xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form"
+	xmlns:t="sap.ui.table"
+	xmlns:core="sap.ui.core"
+	xmlns="sap.m"
+	xmlns:viz="sap.viz.ui5.controls"
+	xmlns:viz.data="sap.viz.ui5.data"
+	xmlns:viz.feeds="sap.viz.ui5.controls.common.feeds"
+	xmlns:commons="sap.suite.ui.commons"
+>
+	<l:Grid
+		defaultSpan="L12 M12 S12"
+		width="auto"
+	>
+		<l:content>
+			<f:SimpleForm
+				minWidth="1024"
+				maxContainerCols="2"
+				editable="false"
+				layout="ResponsiveGridLayout"
+				title="{i18n>HeaderData}"
+				labelSpanL="3"
+				labelSpanM="3"
+				emptySpanL="4"
+				emptySpanM="4"
+				columnsL="1"
+				columnsM="1"
+			>
+				<f:content>
+					<Label text="{i18n>Parent}"/>
+					<Link
+						emphasized="true"
+						text="{Parent} / {ParentTxt}"
+						press="onWBSLinkPressed"
+					/>
+					<Label text="{i18n>OrderId}"/>
+					<Text text="{OrderId}"/>
+					<Label text="{i18n>OrderType}"/>
+					<Text text="{OrderType}"/>
+					<Label text="{i18n>OrderTxt}"/>
+					<Text text="{OrderExtTxt}"/>
+					<Label text="{i18n>DeliverableStatus}"/>
+					<ObjectStatus text="{StatusTxt}"/>
+					<Label text="{i18n>InOutBudget}"/>
+					<Text text="{InOutBudget}"/>
+					<Label text="{i18n>LongDescription}"/>
+					<TextArea
+						value="{OrderLongTxt}"
+						rows="5"
+						editable="false"
+						class="sapMRPNormal gridTableCell amadeusObjectIdentifier"
+					/>
+					<Label text="{i18n>Responsible}"/>
+					<Text text="{= ${Responsible} !== '' ? ${ResponsibleTxt} + ' (' + ${Responsible} + ')'  : '' }"/>
+					<Label text="{i18n>ExpectedStartDate}"/>
+					<Text text="{
+						path: 'ExpectedStartDate',
+						type: 'sap.ui.model.type.Date',
+						formatOptions: {
+							style: 'short'
+						}
+					}"/>
+					<Label text="{i18n>ExpectedDeliveryDate}"/>
+					<Text text="{
+						path: 'ExpectedDeliveryDate',
+						type: 'sap.ui.model.type.Date',
+						formatOptions: {
+							style: 'short'
+						}
+					}"/>
+					<Label text="{i18n>SoGrouping}"/>
+					<Text text="{SoGrouping}"/>
+					<Label text="{i18n>ExternalLinkUrl}"/>
+					<Link
+						text="{ExternalLinkUrl}"
+						target="_blank"
+						href="{ExternalLinkUrl}"
+					/>
+					<Label text="{i18n>ExtSystId}"/>
+					<Text text="{ExternalSystemTxt} / {ExternalSystemTicketId}"/>
+				</f:content>
+			</f:SimpleForm>
+		</l:content>
+	</l:Grid>
+</core:FragmentDefinition>

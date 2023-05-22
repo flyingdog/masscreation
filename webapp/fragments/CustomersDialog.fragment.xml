@@ -1,0 +1,7 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form">
+<SelectDialog class="sapUiPopupWithPadding" title="{i18n>SelectCustomer}" search="handleSearchCustomer" confirm="handleCloseCustomer" items="{path: '/FacetFilterValues'}">
+<items>
+<StandardListItem title="{CustomerId} - {CustomerName}" description="{CustomerId}" type="Active"/>
+</items>
+</SelectDialog>
+</core:FragmentDefinition>

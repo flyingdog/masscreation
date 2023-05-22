@@ -1,0 +1,27 @@
+<core:FragmentDefinition xmlns="sap.m"
+	xmlns:core="sap.ui.core" xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form">
+	<Popover showHeader="false" placement="VerticalPreferredBottom"
+		class="sapUiPopupWithPadding" contentWidth="30%" resizable="true">
+		<Table id="OrderCosts" inset="false" items="{app>/OrderCosts}">
+			<columns>
+				<Column width="50%">
+					<Text text="{i18n>CategoryTxt}" />
+				</Column>
+				<Column width="30%" hAlign="Right">
+					<Text text="{i18n>Value}" />
+				</Column>
+				<Column width="20%">
+					<Text text="{i18n>Currency}" />
+				</Column>
+			</columns>
+			<items>
+				<ColumnListItem type="Active">
+					<Text text="{app>CategoryTxt}" />
+					<Text text="{path: 'app>Value', formatter: '.commonFormatter.formatNumber'}" />
+					<Text text="{app>Currency}" />
+				</ColumnListItem>
+			</items>
+		</Table>
+	</Popover>
+</core:FragmentDefinition>

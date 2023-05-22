@@ -28,6 +28,6 @@
     "int-tests": "fiori run --open 'test/integration/opaTests.qunit.html'"
   },
   "sapuxLayer": "CUSTOMER_BASE",
-  "author": "",
+  "author": "Nicholas",
   "license": "ISC"
 }

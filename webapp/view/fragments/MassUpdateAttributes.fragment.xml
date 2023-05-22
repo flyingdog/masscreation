@@ -1,0 +1,112 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form"
+	xmlns:core="sap.ui.core"
+>
+	<Dialog
+		class="sapUiPopupWithPadding"
+		title="{i18n>MassUpdateAttributes}"
+	>
+		<content>
+			<f:SimpleForm
+				maxContainerCols="2"
+				editable="true"
+				layout="ResponsiveGridLayout"
+				labelSpanL="2"
+				labelSpanM="2"
+				labelSpans="2"
+				emptySpanL="5"
+				emptySpanM="5"
+				emptySpanS="5"
+				columnsL="5"
+				columnsM="5"
+				columnsS="5"
+				class="editableForm"
+			>
+				<f:content>
+					<Label text="{i18n>Status}"/>
+					<Select
+						id="idInputStatus"
+						selectedKey="{massUpdateModel>/Status}"
+						items="{
+							path: '/ValueHelps',
+							filters: [{
+								path: 'FieldName',
+								operator: 'EQ',
+								value1: 'ORDERSTATUSESBYORDERTYPE'
+							}, {
+								path: 'ParentCode',
+								operator: 'EQ',
+								value1: 'YDEL'
+							}]
+						}"
+						width="50rem"
+						visible="true"
+					>
+						<core:Item
+							key="{Code}"
+							text="{Description}"
+						/>
+					</Select>
+					<Label text="{i18n>Priority}"/>
+					<Select
+						id="idInputPriority"
+						selectedKey="{massUpdateModel>/Priority}"
+						items="{
+							path: '/ValueHelps',
+							filters: [{
+								path: 'FieldName',
+								operator: 'EQ',
+								value1: 'DELIVERABLE_PRIORITY'
+							}]
+						}"
+						width="50rem"
+						visible="true"
+					>
+						<core:Item
+							key="{Code}"
+							text="{Description}"
+						/>
+					</Select>
+					<Label text="{i18n>InOutBudget}"/>
+					<Select
+						id="idInOutBudget"
+						selectedKey="{massUpdateModel>/InOutBudget}"
+						items="{
+							path: '/ValueHelps',
+							filters: [{
+								path: 'FieldName',
+								operator: 'EQ',
+								value1: 'PMACTTYPES'
+							}, {
+								path: 'ParentCode',
+								operator: 'EQ',
+								value1: 'YDEL'
+							}]
+						}"
+						width="50rem"
+						visible="true"
+					>
+						<core:Item
+							key="{Code}"
+							text="{Description}"
+						/>
+					</Select>
+				</f:content>
+			</f:SimpleForm>
+		</content>
+		<beginButton>
+			<Button
+				text="{i18n>SaveButton}"
+				press="onMassUpdateSave"
+			/>
+		</beginButton>
+		<endButton>
+			<Button
+				text="{i18n>CancelButton}"
+				press="onMassUpdateCancel"
+			/>
+		</endButton>
+	</Dialog>
+</core:FragmentDefinition>

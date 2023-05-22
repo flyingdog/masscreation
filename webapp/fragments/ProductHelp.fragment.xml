@@ -1,0 +1,19 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core"
+>
+	<SelectDialog
+		title="{i18n>vhDialogProdcutTitle}"
+		class="sapUiPopupWithPadding"
+		items="{/ValueHelps}"
+		search="_onVhSearchProduct"
+		multiSelect="false"
+		confirm="_onVhClose"
+		cancel="_onVhClose"
+	>
+		<StandardListItem
+			title="{Description}"
+			description="{Code}"
+		/>
+	</SelectDialog>
+</core:FragmentDefinition>

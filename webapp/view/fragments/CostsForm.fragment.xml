@@ -1,0 +1,31 @@
+<core:FragmentDefinition
+	xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form"
+	xmlns:t="sap.ui.table"
+	xmlns:core="sap.ui.core"
+	xmlns="sap.m"
+	xmlns:smartchart="sap.ui.comp.smartchart"	
+	   xmlns:viz="sap.viz.ui5.controls"
+	   xmlns:viz.data="sap.viz.ui5.data"
+	   xmlns:viz.feeds="sap.viz.ui5.controls.common.feeds"
+	xmlns:commons="sap.suite.ui.commons">
+	<l:Grid
+		defaultSpan="L12 M12 S12"
+		width="auto">
+		<l:content>
+		    <viz:Popover id="idPopOver"></viz:Popover>
+            <viz:VizFrame id="idVizFrame" uiConfig="{applicationSet:'fiori'}"  vizProperties0="{title: {text: ''}, categoryAxis: {label: {visble: true}}}"
+                height='500px' width="800px" vizType='line'>
+            </viz:VizFrame>					 
+			<t:table id="CostsTable" rows="{data>/data}" selectionMode="None" width="800px">			
+				<t:extension>
+					<OverflowToolbar>
+						<ToolbarSpacer />
+						<Button icon="sap-icon://download"
+							press="onTableDownload" tooltip="{i18n>btnDownload}" />
+					</OverflowToolbar>
+				</t:extension>	
+			</t:table>
+		</l:content>
+	</l:Grid>
+</core:FragmentDefinition>

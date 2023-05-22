@@ -1,0 +1,19 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core"
+	xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form">
+	<Dialog
+		title="{i18n>ConfirmTitle}"
+		class="sapUiPopupWithPadding" >
+		<content>
+        	<Text text="{i18n>ConfrimMessage_Teco}" />
+		</content>
+		<beginButton>
+			<Button text="{i18n>ConfirmButton}" press="onConfirmTECO" />
+		</beginButton>
+		<endButton>
+			<Button text="{i18n>CancelButton}" press="onDialogClose" />
+		</endButton>
+	</Dialog>
+</core:FragmentDefinition>

@@ -15,6 +15,7 @@
 					<t:Column flexible="true" sortProperty="Parent" width="9rem" >
 						<Label tooltip="{i18n>Parent}" text="{i18n>Parent}"/>
 						<t:template>
+						   
 							<Input id="Parent" type="Text" showValueHelp="true" valueHelpRequest="onPortfolioDialogOpen" enabled="{ListServiceOrder>EditableLine}"
 								value="{ListServiceOrder>Parent}" submit="onCheckInputField" change="onParentChange" showSuggestion="true" suggest="onSuggestParent"
 								suggestionItems="{ipoModel>/ValueHelps}" valueState="{ListServiceOrder>ParentState}" valueStateText="Unknown Parent" >
@@ -22,6 +23,16 @@
 									<c:ListItem key="{ipoModel>Code}" text="{ipoModel>Description} ({ipoModel>Code})" additionalText=""/>
 								</suggestionItems>
 							</Input>
+						</t:template>
+						<t:customData>
+							<c:CustomData key="tableType" value="All"/>
+						</t:customData>
+					</t:Column>
+					<t:Column flexible="true" sortProperty="ParentTxt" width="9rem" >
+						<Label tooltip="{i18n>ParentTxt}" text="{i18n>ParentTxt}"/>
+						<t:template>
+						   
+							<Label text="{ListServiceOrder>ParentTxt}"></Label>
 						</t:template>
 						<t:customData>
 							<c:CustomData key="tableType" value="All"/>

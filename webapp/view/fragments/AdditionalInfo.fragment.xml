@@ -1,0 +1,55 @@
+<core:FragmentDefinition
+	xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form"
+	xmlns:t="sap.ui.table"
+	xmlns:core="sap.ui.core"
+	xmlns="sap.m"
+	xmlns:viz="sap.viz.ui5.controls"
+	xmlns:viz.data="sap.viz.ui5.data"
+	xmlns:viz.feeds="sap.viz.ui5.controls.common.feeds"
+	xmlns:commons="sap.suite.ui.commons"
+>
+	<l:Grid
+		defaultSpan="L12 M12 S12"
+		width="auto"
+	>
+		<l:content>
+			<f:SimpleForm
+				minWidth="1024"
+				maxContainerCols="2"
+				editable="false"
+				layout="ResponsiveGridLayout"
+				title="{i18n>AdditionalInfo}"
+				labelSpanL="3"
+				labelSpanM="3"
+				emptySpanL="4"
+				emptySpanM="4"
+				columnsL="1"
+				columnsM="1"
+			>
+				<f:content>
+					<Label text="{i18n>Objective}"/>
+					<TextArea
+						value="{ObjectiveLongTxt}"
+						rows="5"
+						editable="false"
+					/>
+					<Label text="{i18n>Priority}"/>
+					<Text text="{PriorityTxt}"/>
+					<Label text="{i18n>Rank}"/>
+					<Text text="{Rank}"/>
+					<Label text="{i18n>Product}"/>
+					<Text text="{ProductTxt}"/>
+					<Label text="{i18n>Customer}"/>
+					<Text text="{CustomerTxt}"/>
+					<Label text="{i18n>InvestmentProfile}"/>
+					<Text text="{InvestmentProfileTxt}"/>
+					<Label text="{i18n>CommitmentLevel}"/>
+					<Text text="{CommitmentLevelTxt}"/>
+					<!-- <Label text="{i18n>Company}" />
+          <Text text="{CompanyTxt}" /> -->
+				</f:content>
+			</f:SimpleForm>
+		</l:content>
+	</l:Grid>
+</core:FragmentDefinition>

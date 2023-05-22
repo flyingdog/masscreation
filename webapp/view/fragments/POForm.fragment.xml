@@ -1,0 +1,172 @@
+<core:FragmentDefinition
+	xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form"
+	xmlns:t="sap.ui.table"
+	xmlns:core="sap.ui.core"
+	xmlns="sap.m"
+	xmlns:commons="sap.suite.ui.commons">
+	<l:Grid
+		defaultSpan="L12 M12 S12"
+		width="auto">
+		<l:content>
+			<!-- Some olumns are set to visible=false in order to Donwload them to XLS -->
+			<t:table id="purchaseOrderTable" rows="{/PurchaseOrders}" selectionMode="None" width="100%" enableBusyIndicator="true">
+				<t:extension>
+					<OverflowToolbar>
+						<ToolbarSpacer />
+						<!-- <Button icon="sap-icon://action-settings"
+							tap="onTableSettingsOpen" tooltip="{i18n>xtolTablePersonalization}" /> -->
+						<Button icon="sap-icon://download"
+							press="onTableDownload" tooltip="{i18n>btnDownload}" />
+					</OverflowToolbar>
+				</t:extension>			
+				<!-- OrderId -->
+				<!-- <t:Column sortProperty="OrderId">
+					<Label text="{i18n>OrderId}" tooltip="{i18n>OrderId}" />
+					<t:template>
+						<Text text="{OrderId}"/> 
+					</t:template>
+				</t:Column> -->
+				<!-- PurchaseOrderId -->
+				<t:Column sortProperty="PurchaseOrderId" width="12rem">
+					<Label text="{i18n>PurchaseOrder}" tooltip="{i18n>PurchaseOrder}" />
+					<t:template>
+						<ObjectIdentifier title="{PurchaseOrderId}.{PurchaseOrderItem}"/>
+					</t:template>
+				</t:Column>
+				<!-- PurchaseOrderItem -->
+				<t:Column sortProperty="PurchaseOrderItem" visible="false">
+					<Label text="{i18n>PurchaseOrderItem}" tooltip="{i18n>PurchaseOrderItem}" />
+					<t:template>
+						<Text text="{PurchaseOrderItem}"/> 
+					</t:template>
+				</t:Column> 
+				<!-- SupplierId -->
+				<t:Column sortProperty="SupplierId" width="25rem">
+					<Label text="{i18n>Supplier}" tooltip="{i18n>Supplier}" />
+					<t:template>
+						<ObjectIdentifier title="{SupplierId}" text="{SupplierTxt}"/> 
+					</t:template>
+				</t:Column>
+				<!-- SupplierTxt -->
+				<t:Column sortProperty="SupplierTxt" visible="false">
+					<Label text="{i18n>SupplierTxt}" tooltip="{i18n>SupplierTxt}" />
+					<t:template>
+						<Text text="{SupplierTxt}"/> 
+					</t:template>
+				</t:Column>
+
+				<!-- PoItemMaterial -->
+				<!-- <t:Column sortProperty="PoItemMaterial">
+					<Label text="{i18n>PoItemMaterial}" tooltip="{i18n>PoItemMaterial}" />
+					<t:template>
+						<Text text="{PoItemMaterial}"/> 
+					</t:template>
+				</t:Column> -->
+				<!-- PoItemMaterialTxt -->
+				<t:Column sortProperty="PoItemMaterialTxt">
+					<Label text="{i18n>PoItemMaterialTxt}" tooltip="{i18n>PoItemMaterialTxt}" />
+					<t:template>
+						<Text text="{PoItemMaterialTxt}"/> 
+					</t:template>
+				</t:Column>
+
+				<!-- PoItemMaterialGrp -->
+				<t:Column sortProperty="PoItemMaterialGrp">
+					<Label text="{i18n>PoItemMaterialGrp}" tooltip="{i18n>PoItemMaterialGrp}" />
+					<t:template>
+						<ObjectIdentifier title="{PoItemMaterialGrp}" text="{PoItemMaterialGrpTxt}"/> 						
+					</t:template>
+				</t:Column>
+				<!-- PoItemMaterialGrpTxt -->
+				<t:Column sortProperty="PoItemMaterialGrpTxt" visible="false">
+					<Label text="{i18n>PoItemMaterialGrpTxt}" tooltip="{i18n>PoItemMaterialGrpTxt}" />
+					<t:template>
+						<Text text="{PoItemMaterialGrpTxt}"/> 
+					</t:template>
+				</t:Column>
+
+				<!-- PoItemAccount -->
+				<t:Column sortProperty="PoItemAccount">
+					<Label text="{i18n>PoItemAccount}" tooltip="{i18n>PoItemAccount}" />
+					<t:template>
+						<ObjectIdentifier title="{PoItemAccount}" text="{PoItemAccountTxt}"/> 						
+					</t:template>
+				</t:Column>
+				<!-- PoItemAccountTxt -->
+				<t:Column sortProperty="PoItemAccountTxt" visible="false">
+					<Label text="{i18n>PoItemAccountTxt}" tooltip="{i18n>PoItemAccountTxt}" />
+					<t:template>
+						<Text text="{PoItemAccountTxt}"/> 
+					</t:template>
+				</t:Column>
+
+				<!-- PoItemQuantity -->
+				<t:Column sortProperty="PoItemQuantity">
+					<Label text="{i18n>PoItemQuantity}" tooltip="{i18n>PoItemQuantity}" />
+					<t:template>
+						<ObjectNumber number="{path: 'PoItemQuantity', formatter: '.commonFormatter.formatNumber'}" unit="{PoItemUnit}" textAlign="Right"/> 
+					</t:template>
+				</t:Column>
+				<!-- PoItemUnit -->
+				<t:Column sortProperty="PoItemUnit" visible="false">
+					<Label text="{i18n>PoItemUnit}" tooltip="{i18n>PoItemUnit}" />
+					<t:template> 
+						<Text text="{PoItemUnit}"/> 
+					</t:template>
+				</t:Column>
+				<!-- PoItemDeliveredQuantity -->
+				<t:Column sortProperty="PoItemDeliveredQuantity">
+					<Label text="{i18n>PoItemDeliveredQuantity}" tooltip="{i18n>PoItemDeliveredQuantity}" />
+					<t:template>
+						<ObjectNumber number="{path: 'PoItemDeliveredQuantity', formatter: '.commonFormatter.formatNumber'}" unit="{PoItemUnit}" textAlign="Right"/> 
+					</t:template>
+				</t:Column>
+				<!-- PoItemOpenQuantity -->
+				<t:Column sortProperty="PoItemOpenQuantity">
+					<Label text="{i18n>PoItemOpenQuantity}" tooltip="{i18n>PoItemOpenQuantity}" />
+					<t:template>
+						<ObjectNumber number="{path: 'PoItemOpenQuantity', formatter: '.commonFormatter.formatNumber'}" unit="{PoItemUnit}" textAlign="Right"/> 
+					</t:template>
+				</t:Column>
+
+				<!-- PoItemValue -->
+				<t:Column sortProperty="PoItemValue">
+					<Label text="{i18n>PoItemValue}" tooltip="{i18n>PoItemValue}" />
+					<t:template>
+						<ObjectNumber number="{path: 'PoItemValue', formatter: '.commonFormatter.formatNumber'}" unit="{PoItemCurrency}" textAlign="Right"/> 
+					</t:template>
+				</t:Column>
+				<!-- PoItemDeliveredValue -->
+				<t:Column sortProperty="PoItemDeliveredValue">
+					<Label text="{i18n>PoItemDeliveredValue}" tooltip="{i18n>PoItemDeliveredValue}" />
+					<t:template>
+						<ObjectNumber number="{path: 'PoItemDeliveredValue', formatter: '.commonFormatter.formatNumber'}" unit="{PoItemCurrency}" textAlign="Right"/> 
+					</t:template>
+				</t:Column>
+				<!-- PoItemOpenValue -->
+				<t:Column sortProperty="PoItemOpenValue">
+					<Label text="{i18n>PoItemOpenValue}" tooltip="{i18n>PoItemOpenValue}" />
+					<t:template>
+						<ObjectNumber number="{path: 'PoItemOpenValue', formatter: '.commonFormatter.formatNumber'}" unit="{PoItemCurrency}" textAlign="Right"/> 
+					</t:template>
+				</t:Column>
+				<!-- PoItemCurrency -->
+				<t:Column sortProperty="PoItemCurrency" visible="false">
+					<Label text="{i18n>PoItemCurrency}" tooltip="{i18n>PoItemCurrency}" />
+					<t:template>
+						<Text text="{PoItemCurrency}"/> 
+					</t:template>
+				</t:Column>
+
+				<!-- PoItemCompleted -->
+				<t:Column sortProperty="PoItemCompleted" width="3rem">
+					<Label text="{i18n>PoItemCompleted}" tooltip="{i18n>PoItemCompleted}" />
+					<t:template>
+						<Checkbox selected="{PoItemCompleted}" enabled="false"/> 
+					</t:template>
+				</t:Column>
+			</t:table>			
+		</l:content>
+	</l:Grid>
+</core:FragmentDefinition>
